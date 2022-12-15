@@ -2,38 +2,58 @@
 
 \section{Introductie}%
 \label{sec:introductie}
-
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
-
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
-
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
-
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Veel bedrijven hebben wat men noemt: een vuilnistabel. Dit is een tabel met ongestructureerde masterdata. Hierin staan allerlei gegevens door elkaar, waardoor het lastig wordt om iets te doen met deze data. In dit onderzoek zal er gekeken worden naar de verschillende mogelijkheden voor data-extractie te verbeteren in zo'n tabellen. Data-extractie of gegevensextractie slaat op het ophalen van relevante gegevens uit een tabel of databank.
+\\\indent
+In dit onderzoek zal enkel master data onderzocht worden. Master data zijn de gegevens van een bedrijf die niet transactioneel zijn. Dit betekent dat de data niet te maken heeft met transacties zoals het plaatsen van orders bijvoorbeeld. Master data zal normaal gezien nooit veranderen. Eén van de voornaamste voorbeelden hiervan zijn productgegevens: de naam, afmetingen, prijs... Deze gegevens gaan enkel aangepast worden in uitzonderlijke gevallen.
+\\\indent
+Er zijn twee mogelijkheden om deze data op te slaan: gestructureerd of ongestructureerd. Gestructureerde data is georganiseerd en gegroepeerd zodat alle verschillende gegevens in een aparte tabel zitten. Als dit niet het geval is en er bestaat slechts één tabel met daarin allerlei gegevens, is er sprake van ongestructureerde data. Een voorbeeld hiervan is een tabel met de naam, prijs, afmetingen, beschrijving van het product allemaal tezamen.
+\\\indent
+Het grote probleem met ongestructureerde master data is het feit dat het verbeteren van de datakwaliteit een stuk moeilijker wordt. Zoeken of sorteren in zo'n tabel is heel moeilijk, ook duplicaten onderscheiden is niet gemakkelijk. Daarnaast kan het soms zelfs lastig worden om de gewenste data op te halen uit zo'n tabel.
+\\\indent
+In dit onderzoek zullen er verschillende mogelijkheden vergeleken worden om gelijkaardige waarden uit een tabel te vinden(Fuzzymatching). Er bestaan al een heleboel technieken en metrieken hiervoor, maar wat als we de tabel eerst gaan onderverdelen in verschillende groepen (Clustering) waarbij het de bedoeling is dat elke groep iets gelijkaardigs heeft zodat er een label aan iedere groep kan gegeven worden (Tagging). De methode clustering + tagging zal worden onderzocht en vergeleken met bestaande algoritmes die gebruik maken van andere technieken.
+\\\indent
+Eerst en vooral zal er worden onderzocht welke algoritmes er reeds bestaan voor clustering en/of tagging in een tabel met ongestructureerde masterdata. Ook andere algoritmes voor Fuzzymatching met verschillende technieken zullen onderzocht worden. De algoritmes met betrekking tot custering en/of tagging zullen worden vergeleken met elkaar, maar ook met de algoritmes die gebruik maken van andere technieken.
+\\\indent
+De vergelijkende studie zal uitgevoerd worden aan de hand van aan tabel met ongestructureerde masterdata afkomstig uit een bestaand bedrijf. Met behulp van libraries in Python zal er vergeleken worden op basis van de volgende zaken: de accuraatheid, de snelheid, de precisie (Hoeveelheid van de gevonden duplicaten die correct zijn), de recall (Hoeveelheid van de aanwezige duplicaten is gevonden).
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+Twee identieke waarden in een tabel onderscheiden is natuurlijk niet zo moeilijk. Het wordt een stuk lastiger om waarden te identificeren die gelijkend zijn, en groot voorbeeld hiervan zijn typefouten. Het is wel belangrijk om een goed algoritme te kiezen, om zo weinig mogelijk, of in het beste geval geen, vals positieve uitkomsten te krijgen.
+\\\indent
+Een eerste mogelijkheid is om gebruik te maken van de 'Levenshtein distance'. Deze metriek bepaald de afstand tussen twee strings aan de hand van het aantal uit te voeren operaties. Deze operaties zijn: een letter toevoegen of verwijderen en een letter veranderen. Hoe meer operaties er moeten uitgevoerd worden, hoe groter de afstand tussen twee strings.
+\\\indent
+Een tweede metriek om de afstand te bepalen is de 'Hamming distance'. Deze metriek transformeert alle karakters in beide strings in hun binaire vorm. Bijvoorbeeld: 'a' wordt '1100001' en 'A' wordt '1000001'. De afstand tussen beide strings wordt bepaald aan de hand van het aantal verschillen in de binaire codes van de karakters. De afstand tussen 'a' en 'A' is dus 1, aangezien er slechts één binair karakter verschilt.
+\\\indent
+Een derde metriek heet de 'Damerau-Levenshtein distance'. Deze metriek is quasi hetzelfde als de 'Levenshtein distance', maar met de toevoeging van de transposition-operatie. Dit houdt in dat twee karakters die naast elkaar staan, gewisseld kunnen worden en de afstand slechts met één verhoogt. Zo wordt de afstand met deze metriek tussen 'over' en 'voer' één, terwijl de 'Levenshtein distance' tussen deze woorden twee zou zijn.
+\\\indent
+Een vierde metriek hiervoor is de 'Affine gap distance'. Hierbij wordt er rekening gehouden met afkortingen, dit komt voornamelijk voor bij namen: 'K. Dehandschutter' in plaats van 'Kobe Dehandschutter'. Met vorige metrieken zou de afstand hiertussen zeer groot zijn, aangezien er drie letters toegevoegd moeten worden, terwijl de twee strings eigenlijk heel gelijkaardig zijn. Qua scoring zijn er verschillende mogelijkheden hiervoor. Ofwel wordt voor iedere opening van een gap de afstand met drie verhoogt, en voor iedere extra toevoeging met één. Ofwel wordt er voor elk eerste karakter dat moet aangepast worden, plus één gedaan en voor elke opvolger in de gap plus een halfje.
+\\\indent
+Bovenstaande afstandsmetrieken zijn allemaal character-based, deze zijn handig om typefouten te ontdekken, maar als er bijvoorbeeld 'Kobe Dehandschutter' en 'Dehandschutter Kobe' wordt vergeleken, gaat de afstand heel groot zijn. Hiervoor is er een nieuwe categorie: de Token-based techniek.
+\\\indent
+Binnen deze techniek zijn er twee metrieken die zullen worden onderzocht. Als eerste is er een algoritme op basis van atomic strings. Dit is een reeks karakters die gesplitst wordt door interpunctie.
+\\\indent
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+Clustering
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+
+Het K-means clustering algoritme wordt gebruikt om te clusteren in een tabel met ongestructureerde data. Dit is een incrementeel algoritme dat één cluster center tegelijk toevoegt en evenveel keer iteraties zal uitvoeren als er waarden in de tabel zitten.
+
+
+
+%Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+
+%Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+
+%Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+
+%Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+%
+%Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -42,31 +62,50 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+%Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Het onderzoek zal uit vier verschillende fasen bestaan.
+\\\indent
+Vooraleer er kan begonnen worden met algoritmes runnen, moeten de requirements opgesteld worden waaraan voldaan moet worden, dit wordt dus de eerste fase. Er zal gewerkt worden met de MoSCoW methode (Must have, Should have, Could have, Won't have). Op deze manier is het duidelijk wanneer een algoritme geschikt is en wanneer niet.
+\\\indent
+In de tweede fase zullen alle algoritmes in de long list van gevonden mogelijkheden voor fuzzymatching uitgeprobeerd worden op de gekregen dataset. Zo zal er al een eerste onderscheiding gemaakt kunnen worden tussen degene die geschikt zijn en degene die niet geschikt zijn. Deze afmeting gebeurt aan de hand van de opgestelde requirements. Vervolgens wordt kort gekeken waarom de gefaalde algoritmes niet geschikt zijn voor deze probleemstelling, was dit verwacht of totaal niet?
+\\\indent
+Hierna komt de derde fase en nu zullen de algoritmes uit de short list van geschikt algoritmes vergeleken. Eerst en vooral wordt er gekeken naar de accuraatheid. Dit wordt berekent door het aantal correcte uitkomsten te delen door het totaal aantal uitkomsten. Dit is één van de belangrijkste eigenschappen van een algoritme, aangezien de resultaten toch correct moeten zijn. Vervolgens worden de precisie en recall vergeleken aangezien deze op een gelijkaardige manier te berekenen zijn. Het is natuurlijk ook belangrijk dat het runnen van een algoritme niet te lang duurt, een volgende eigenschap die zal worden vergeleken is de snelheid van het algoritme.
+\\\indent
+In de vierde en laatste fase zal er een proof-of-concept worden opgesteld voor deze probleemstelling. Het algoritme dat in de vorige fase als meest geschikt naar voor kwam, zal worden gebruikt om aan te tonen of het probleem wel of niet oplosbaar is.
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+
+%Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+%
+%Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+%
+%Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+%
+%Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+%
+%Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+%
+%Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+Er wordt verwacht dat het beste algoritme voor deze probleemstelling K-means wordt. Dit zal de tabel eerst clusteren waarna er via tagging gezocht kan worden naar duplicaten. Door het feit dat de tabel geclusterd wordt, wordt verwacht dat het algoritme sneller gerund kan worden dan anderen en dat het ook correcter kan uitgevoerd worden.
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+
+%Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+%
+%Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+%
+%Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
 
