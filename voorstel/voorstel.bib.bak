@@ -1,0 +1,61 @@
+@WWW{Yellowground,
+  editor = {Yellowground},
+  title  = {WAT IS MASTER DATA?},
+  url    = {https://yellowground.eu/wat-is-master-data/},
+}
+
+@WWW{Lievens2022,
+  author  = {Stijn Lievens},
+  date    = {2022-05-30},
+  editor  = {AI-Assisted},
+  title   = {Achterliggende uitleg bij Duplicaatdetectie},
+  url     = {http://ai-assisted-mdm.be/node/32},
+  urldate = {2016-09-01},
+}
+
+@WWW{Wikiversity2022,
+  date    = {2022-03-05},
+  editor  = {Wikiversity},
+  title   = {Duplicate record detection},
+  url     = {https://en.wikiversity.org/wiki/Duplicate_record_detection},
+  urldate = {2016-09-01},
+}
+
+@WWW{Seagate,
+  editor = {Seagate},
+  title  = {Gestructureerde of ongestructureerde gegevens},
+  url    = {https://www.seagate.com/be/nl/blog/structured-vs-unstructured-data/},
+}
+
+@WWW{Silva2022,
+  author = {Eric Silva},
+  date   = {2022-07-15},
+  editor = {Redis},
+  title  = {What is Fuzzy Matching?},
+  url    = {https://redis.com/blog/what-is-fuzzy-matching/},
+}
+
+@WWW{Includehelp,
+  editor = {Includehelp},
+  title  = {ASCII Character Table},
+  url    = {https://www.includehelp.com/ascii-table.aspx/},
+}
+
+@WWW{Encyclo.nl,
+  editor = {Encyclo.nl},
+  title  = {DATA EXTRACTIE DEFINITIES},
+  url    = {https://www.encyclo.nl/begrip/data_extractie},
+}
+
+@WWW{Brownlee2016,
+  author = {Jason Brownlee},
+  date   = {2020-08-28},
+  editor = {Machine Learning Mastery},
+  title  = {How To Compare Machine Learning Algorithms in Python with scikit-learn},
+  url    = {https://machinelearningmastery.com/compare-machine-learning-algorithms-python-scikit-learn/#:~:text=The key to a fair,Logistic Regression},
+}
+
+@Article{,
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
