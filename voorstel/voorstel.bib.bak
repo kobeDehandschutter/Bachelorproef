@@ -49,13 +49,62 @@
 
 @WWW{Brownlee2016,
   author = {Jason Brownlee},
-  date   = {2020-08-28},
+  date   = {2016-06-01},
   editor = {Machine Learning Mastery},
   title  = {How To Compare Machine Learning Algorithms in Python with scikit-learn},
   url    = {https://machinelearningmastery.com/compare-machine-learning-algorithms-python-scikit-learn/#:~:text=The key to a fair,Logistic Regression},
 }
 
-@Article{,
+@WWW{Pypi2020,
+  date   = {2020-10-31},
+  editor = {Pypi},
+  title  = {fastDamerauLevenshtein},
+  url    = {https://pypi.org/project/fastDamerauLevenshtein/},
+}
+
+@WWW{Walgran2019,
+  author = {Justin Walgran},
+  date   = {2019-08-30},
+  editor = {Azavea},
+  title  = {Using the Dedupe Machine Learning Library for Cleaning and Matching Data},
+  url    = {https://www.azavea.com/blog/2019/08/30/using-the-dedupe-machine-learning-library-for-cleaning-and-matching-data/},
+}
+
+@WWW{Karnites2017,
+  author = {V. Karnītes},
+  date   = {2017-12-03},
+  editor = {sistēmanalīze},
+  title  = {Big Data: string similarity: mind the Gap. The Affine Gap.},
+  url    = {https://sistemanalize.wordpress.com/2017/12/03/bigdata-string-similarity-mind-the-gap-the-affine-gap/},
+}
+
+@WWW{GoogleDevelopers2022,
+  date   = {2022-07-18},
+  editor = {GoogleDevelopers},
+  title  = {feedbackClassification: Precision and Recall},
+  url    = {https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall},
+}
+
+@WWW{Opendsa,
+  editor = {Opendsa},
+  title  = {CS3 Data Structures & Algorithms},
+  url    = {https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/AnalIntro.html},
+}
+
+@WWW{Anchalia2013,
+  author = {Prajesh Anchalia and Anjan Koundinya and K. Srinath},
+  date   = {2013-08-15},
+  editor = {IEEE},
+  title  = {MapReduce Design of K-Means Clustering Algorithm},
+  url    = {https://ieeexplore.ieee.org/abstract/document/6579448/references#references},
+}
+
+@WWW{Likas2003,
+  author = {Aristidis Likas and Nikos Vlassis and Jakob Verbeek},
+  date   = {2003-02},
+  editor = {ScienceDirect},
+  title  = {The global k-means clustering algorithm},
+  url    = {https://www.sciencedirect.com/science/article/abs/pii/S0031320302000602},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
