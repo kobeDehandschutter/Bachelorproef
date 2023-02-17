@@ -5,20 +5,18 @@
 }
 
 @WWW{Lievens2022,
-  author  = {Stijn Lievens},
-  date    = {2022-05-30},
-  editor  = {AI-Assisted},
-  title   = {Achterliggende uitleg bij Duplicaatdetectie},
-  url     = {http://ai-assisted-mdm.be/node/32},
-  urldate = {2016-09-01},
+  author = {Stijn Lievens},
+  date   = {2022-05-30},
+  editor = {AI-Assisted},
+  title  = {Achterliggende uitleg bij Duplicaatdetectie},
+  url    = {http://ai-assisted-mdm.be/node/32},
 }
 
 @WWW{Wikiversity2022,
-  date    = {2022-03-05},
-  editor  = {Wikiversity},
-  title   = {Duplicate record detection},
-  url     = {https://en.wikiversity.org/wiki/Duplicate_record_detection},
-  urldate = {2016-09-01},
+  date   = {2022-03-05},
+  editor = {Wikiversity},
+  title  = {Duplicate record detection},
+  url    = {https://en.wikiversity.org/wiki/Duplicate_record_detection},
 }
 
 @WWW{Seagate,
@@ -70,14 +68,6 @@
   url    = {https://www.azavea.com/blog/2019/08/30/using-the-dedupe-machine-learning-library-for-cleaning-and-matching-data/},
 }
 
-@WWW{Karnites2017,
-  author = {V. Karnītes},
-  date   = {2017-12-03},
-  editor = {sistēmanalīze},
-  title  = {Big Data: string similarity: mind the Gap. The Affine Gap.},
-  url    = {https://sistemanalize.wordpress.com/2017/12/03/bigdata-string-similarity-mind-the-gap-the-affine-gap/},
-}
-
 @WWW{GoogleDevelopers2022,
   date   = {2022-07-18},
   editor = {GoogleDevelopers},
@@ -105,6 +95,14 @@
   editor = {ScienceDirect},
   title  = {The global k-means clustering algorithm},
   url    = {https://www.sciencedirect.com/science/article/abs/pii/S0031320302000602},
+}
+
+@MastersThesis{Vandenbussche,
+  author      = {Bjorn Vandenbussche},
+  date        = {2016-06-01},
+  institution = {UGent},
+  title       = {Verbeterde aanbevelingssystemen op basis van content herkenning in tekst},
+  pages       = {80},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
