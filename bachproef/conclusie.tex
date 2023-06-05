@@ -7,12 +7,21 @@
 
 % TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
 % onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
+% hoe biedt dit meerwaarde aan het vakgebied/doelgroep?
 % Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
 % ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
 % niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
+% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder
 %onderzoek?
 
-\lipsum[76-80]
+
+Uit de resultaten van de vergelijkende studie kan geconcludeerd worden dat K-means op alle vlakken de beste clustermethode is voor ongestructureerde masterdata. De methode werkt door eerst de data om te zetten in vectoren aan de hand van tf-idf, hierbij worden de strings eerst in n-grammen gesplitst met een range van 2 tot 4 karakters. Vervolgens wordt een canopy clustering uitgevoerd op deze lijst van vectoren zodat er kan bepaald worden hoeveel clusters er nodig zijn. Tot slot clustert het K-means algoritme de dataset op basis van dit aantal clusters en de vectoren van tf-idf.
+\\\indent
+
+\\\indent
+Uit dit onderzoek blijkt ook dat dbscan helemaal niet geschikt is om aan de hand van tf-idf of word2vec ongestructureerde masterdata te clusteren. Hiërarchisch clusteren of K-means combineren met word2vec bleek dan weer wel in staat de data succesvol te clusteren, maar toch niet zo goed als de combinatie tussen K-means en tf-idf.
+\\\indent
+
+\\\indent
+Er is echter toch nog een grote vraag die overblijft, aangezien er geen manier gevonden is om ongestructureerde masterdata in de vorm van lange zinnen succesvol te clusteren. Zijn er misschien andere methodes die over het hoofd gekeken zijn? Ook is er in dit onderzoek niet dieper ingegaan op het taggen van de clusters zodat er kan geweten zijn waarom de waarden in een cluster samen horen. Dit is bij deze een uitnodiging tot verder onderzoek.
 

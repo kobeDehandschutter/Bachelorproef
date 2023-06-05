@@ -91,8 +91,8 @@
     \ifx\@academicyear\@empty{%
       \ClassError{\@classname}{Academic year is undefined!}%
       {Use the \academicyear command to define it}
-    }\fi  
-  
+    }\fi
+
     %% The following variables only need to be defined for a thesis
     \if@thesis
       \ifx\@supervisor\@empty{%
@@ -108,7 +108,7 @@
               {Use the \degreesought command to define it}
       }\fi
     \fi
-  
+
     %% Since the input is there, set the PDF info
     \hypersetup{%
         pdftitle=\@title,
@@ -337,7 +337,6 @@
         not running XeLaTeX/LuaLaTeX: using native fonts}
 
     \RequirePackage[defaultfam,tabular,lining]{montserrat}
-    \RequirePackage{firamath}
     \RequirePackage{sfmath} % Fallback sans serif math font
 
     \RequirePackage[T1]{fontenc}
@@ -452,13 +451,13 @@
 \if@titlepage%
   \renewcommand{\maketitle}{\thispagestyle{empty}\begin{titlepage}%
     \@checkvariables
-    
+
     %% Change the geometry so the notes section doesn't bother us
     \newgeometry{top=2cm,bottom=\wd\logopart,left=1.5cm,right=1.5cm}
-    
+
     %% Add whitespace at the top
     %\addvspace{10\bigskipamount}
-    
+
     \begingroup
       %% Print the title in the faculty color
       \titlefont\color{title}\Huge\@title\@addpunct{.}\\
@@ -474,9 +473,9 @@
       %% Print the name of the author
       \subtitlefont\Large\bfseries \@author\@addpunct{.}
     \endgroup
-    
+
     \vfill
-    
+
     \if@thesis
       \begingroup
         \IfLanguageName{dutch}{%
@@ -488,10 +487,10 @@
         }
       \endgroup
     \fi
-    
+
     \bigskip
     \bigskip
-    
+
     \if@thesis
       \begingroup
           \IfLanguageName{dutch}{%
@@ -518,7 +517,7 @@
               \fi
           \IfLanguageName{dutch}{examenperiode}{exam period} } \\
       \endgroup
-      
+
       \bigskip
     \else
         \IfLanguageName{dutch}{%
@@ -527,7 +526,7 @@
     \begingroup
       \subtitlefont\bfseries\@departmentname\@addpunct{.}
     \endgroup
-    
+
     %% Insert the HoGent logo
     \begin{tikzpicture}[remember picture, overlay]
       \node [anchor=south east, shift={(-\the\wd\logopart, \the\wd\logopart)}, inner sep=0, outer sep=0] (logo) at (current page.south east)%
@@ -537,7 +536,7 @@
     \end{tikzpicture}
 
     \end{titlepage}%
-    
+
     \thispagestyle{empty}
     \null\clearpage\restoregeometry
   }

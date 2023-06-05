@@ -25,24 +25,34 @@
 %
 % LET OP! Een samenvatting is GEEN voorwoord!
 
-%%---------- Nederlandse samenvatting -----------------------------------------
-%
-% TODO: Als je je bachelorproef in het Engels schrijft, moet je eerst een
-% Nederlandse samenvatting invoegen. Haal daarvoor onderstaande code uit
-% commentaar.
-% Wie zijn bachelorproef in het Nederlands schrijft, kan dit negeren, de inhoud
-% wordt niet in het document ingevoegd.
 
-\IfLanguageName{english}{%
-\selectlanguage{dutch}
-\chapter*{Samenvatting}
-\lipsum[1-4]
-\selectlanguage{english}
-}{}
 
 %%---------- Samenvatting -----------------------------------------------------
 % De samenvatting in de hoofdtaal van het document
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
 
-\lipsum[1-4]
+Het beheren van ongestructureerde masterdata is een probleem waar veel bedrijven mee kampen. Het is heel lastig om structuur te brengen in zulke tabellen. In dit onderzoek worden verschillende manieren vergeleken om deze data te clusteren zodat gelijkaardige data gegroepeerd wordt. Aan de hand daarvan kunnen bedrijven de beste methode vinden om de datakwaliteit van hun masterdata te verbeteren.
+\\\indent
+Ongestructureerde masterdata bestaat in alle vormen en maten, daarom wordt in dit onderzoek gebruik gemaakt van drie verschillende datasets. De eerste bevat productinformatie die bestaat uit een paar woorden, codes en afmetingen. De tweede set bevat informatie over wijnen in de vorm van lange zinnen. De derde bevat opnieuw productinformatie, maar deze keer zonder codes of afmetingen, enkel bestaande woorden.
+\\\indent
+Wanneer alle mogelijke clustermethodes besproken zijn, worden de drie meest geschikte methodes uitgewerkt, namelijk K-means, dbscan en Hiërarchisch clusteren. De algoritmes K-means en dbscan verwachten de data echter in getallen in plaats van in woorden. Ook hiervoor worden verschillende manieren gezocht en de twee meest geschikte manieren hiervoor worden uitgewerkt, namelijk tf-idf en word2vec.
+\\\indent
+Hiërarchisch clusteren verwacht de data niet in getallen zoals de andere methodes, maar dit algoritme verwacht een matrix met alle afstanden tussen iedere waarde van de dataset. Om dit te bereiken zijn er opnieuw een aantal mogelijkheden. In dit onderzoek wordt de Levenshtein distance gebruikt.
+\\\indent
+Uiteindelijk zijn er vijf verschillende combinaties die uitgewerkt worden:
+\begin{enumerate}
+    \item Tf-idf met K-means.
+    \item Tf-idf met dbscan.
+    \item Levenshtein distance met hiërarchisch clusteren.
+    \item Word2vec met K-means.
+    \item Word2vec met dbscan.
+\end{enumerate}
+\\\indent
+Het uitwerken van de algoritmes gebeurt in Python, aangezien er in Python heel wat bibliotheken bestaan die helpen bij het opstellen van deze algoritmes. Alle vijf de combinaties worden uitgevoerd met alle drie de datasets en de resultaten worden vergeleken op basis van het aantal clusters, de grootste cluster, een eventuele vuilniscluster die restwaarden bevat en het Silhoutte gemiddelde. Dit Silhoutte gemiddelde is een manier om de accuraatheid van een ongesuperviseerd clusteralgoritme te berekenen.
+\\\indent
+Uit de resultaten van de vergelijkende studie komt tf-idf in combinatie met K-means naar voren als de beste manier om ongestructureerde masterdata te clusteren. Dit is echter enkel het geval voor de twee datasets met productdata. Voor de dataset met de lange zinnen is geen enkele methode geslaagd in het succesvol clusteren van deze data. Hopelijk kan ik aan de hand van dit onderzoek iemand op weg helpen om een geschikte manier hiervoor te vinden.
+\\\indent
+
+
+
